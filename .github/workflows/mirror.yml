@@ -23,3 +23,7 @@ jobs:
           cd ..
         }
         mirror jaywcjlove github-rank
+        mirror jaywcjlove linux-command
+        mirror jaywcjlove hotkeys
+        mirror jaywcjlove oscnews
+        mirror jaywcjlove iNotify
