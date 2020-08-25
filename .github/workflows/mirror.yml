@@ -27,3 +27,8 @@ jobs:
         mirror jaywcjlove hotkeys
         mirror jaywcjlove oscnews
         mirror jaywcjlove iNotify
+        mirror jaywcjlove sgo
+        mirror jaywcjlove oscnews
+        mirror jaywcjlove mocker-api
+        mirror jaywcjlove vim-web
+        mirror jaywcjlove translater.js
