@@ -31,7 +31,7 @@ jobs:
         mirror jaywcjlove linux-command
         mirror jaywcjlove hotkeys
         # mirror jaywcjlove oscnews
-        mirror jaywcjlove iNotify
+        # mirror jaywcjlove iNotify
         mirror jaywcjlove sgo
         mirror jaywcjlove oscnews
         mirror jaywcjlove mocker-api
