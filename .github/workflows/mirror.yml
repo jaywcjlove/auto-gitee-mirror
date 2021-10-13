@@ -12,6 +12,11 @@ jobs:
     name: Sync to Gitee
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
     - name: Manually mirror
       run: |
         mirror() {
@@ -32,3 +37,23 @@ jobs:
         mirror jaywcjlove mocker-api
         mirror jaywcjlove vim-web
         mirror jaywcjlove translater.js
+
+    - run: echo {{DATE}}
+    - run: mkdir -p build
+    - run: |
+        cat > DATE.md << EOF
+        Auto Gitee Mirror
+
+        ![Mirror](https://github.com/jaywcjlove/auto-gitee-mirror/workflows/Mirror/badge.svg) [![](https://jaywcjlove.github.io/sb/ico/gitee.svg)](https://gitee.com/jaywcjlove)
+
+        Use GitHub Actions to sync from GitHub to [Gitee](https://gitee.com/jaywcjlove)
+
+        {{DATE}}
+        EOF
+
+    - run: markdown-to-html -s DATE.md --output build/index.html
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
